@@ -1,35 +1,60 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+﻿<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEssentialsPM02.ListaFotos">
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <converters:ImageFileToImageSourceConverter x:Key="ImageFileToImageSourceConverter" />
-        </ResourceDictionary>
-    </ContentPage.Resources>
+
+
 
     <ContentPage.Content>
 
         <StackLayout>
-            <ListView x:Name="ListaFotosBD"  RowHeight="350" BackgroundColor="#000000" SeparatorColor="#8D66F3">
+            <ListView x:Name="ListaFotosBD" ItemSelected="ListaFotosBD_ItemSelected" RowHeight="350" BackgroundColor="#000000" SeparatorColor="#8D66F3">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Grid Background="#1b1b1b" Padding="20,10,20,10">
 
-                                <Label Grid.Row="1"
-                                       TextColor="Aqua" Text="{Binding id}" IsVisible="true" />
+                                <StackLayout Orientation="Horizontal">
+                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill">
+                                        <Label 
+                                           TextColor="Aqua" Text="{Binding id}" IsVisible="true" FontSize="50" VerticalOptions="Center" Padding="0" />
+                                    </Frame>
 
-                                <Label Grid.Row="2"
-                                       TextColor="Aqua" Text="{Binding ImageRoute, Converter={StaticResource ImageFileToImageSourceConverter}}" IsVisible="true" />
 
+                                    <Label 
+                                           TextColor="Aqua" Text="{Binding ImageRoute}" IsVisible="false" />
+
+                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="40,0,0,0" BorderColor="#748FAD">
+                                        <Image x:Name="fotodb" Source="{Binding ImageRoute}" HorizontalOptions="End" Margin="0"/>
+                                    </Frame>
+
+
+                                </StackLayout>
 
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Frame BorderColor="#3E77F3" BackgroundColor="#121212" Margin="-20" CornerRadius="10" >
+                <StackLayout >
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,0,10,10">
+                        <Label TextColor="#AEA3FA" Text="Ha seleccionado la foto num.: " FontSize="20"/>
+                        <Label TextColor="#AEA3FA" x:Name="selleccion" FontSize="20" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button x:Name="btnmod" Text="Modificar Datos" 
+                                                    BackgroundColor="#af95cf" Margin="10,0,10,0" FontSize="15" Clicked="btnmod_Clicked" FontAttributes="Bold" TextColor="#351B58"/>
+
+                        <Button x:Name="btnborrar" Text="Borrar Datos" 
+                                                BackgroundColor="#af95cf" Margin="10,0,10,0" FontSize="15" Clicked="btnborrar_Clicked" FontAttributes="Bold" TextColor="#351B58"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

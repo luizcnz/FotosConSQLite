@@ -36,20 +36,21 @@ namespace AppEssentialsPM02
 
             #region desastres de carlos
 
-            
-               string ruta = Convert.ToString(ImageSource.FromStream(() => { return tomarfoto.GetStream(); }));
 
-                var lugar = new pictures
-                {
-                    ImageRoute = tomarfoto.Path
-                };
+            string ruta = Convert.ToString(ImageSource.FromStream(() => { return tomarfoto.GetStream(); }));
 
-                using (SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB))
-                {
-                    conexion.CreateTable<pictures>();
-                    conexion.Insert(lugar);
+            var lugar = new pictures
+            {
+                ImageRoute = tomarfoto.Path
 
-                }
+            };
+
+            using (SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB))
+            {
+                conexion.CreateTable<pictures>();
+                conexion.Insert(lugar);
+
+            }
 
 
 
@@ -63,7 +64,7 @@ namespace AppEssentialsPM02
                 foto.Source = ImageSource.FromStream(() => { return tomarfoto.GetStream(); });
             }
 
-            await Navigation.PushAsync(new ListaFotos());
+
 
             /*var compartirFoto = tomarfoto.Path;
             await Share.RequestAsync(new ShareFileRequest
@@ -73,7 +74,9 @@ namespace AppEssentialsPM02
             });*/
         }
 
-        
-
+        private async void Ver_Lista_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ListaFotos());
+        }
     }
 }

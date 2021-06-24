@@ -6,6 +6,7 @@
         <StackLayout>
             <Image x:Name="foto"/>
             <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto"/>
+            <Button x:Name="Ver_Lista" Clicked="Ver_Lista_Clicked" Text="Ver Lista De Fotos"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

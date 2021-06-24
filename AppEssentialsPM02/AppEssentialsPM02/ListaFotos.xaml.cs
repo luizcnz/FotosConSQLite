@@ -47,14 +47,21 @@ namespace AppEssentialsPM02
             ListaFotosBD.ItemsSource = listafotos;
             conexion.Close();
 
+
+
             //new MediaFile(file.Path, () => file.OpenStreamForReadAsync().Result, albumPath: null);
 
-            pictures pic = new pictures();
+            //pictures pic = new pictures();
 
-            /*carga.Text = pic.ImageRoute;
+            /*carga.Text = pic.ImageRoute;*/
 
-            foto_db.Source = pic.ImageRoute;*/
+            //fotodb.Source = pic.ImageRoute;
 
+
+        }
+
+        private void ListaFotosBD_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
 
         }
     }

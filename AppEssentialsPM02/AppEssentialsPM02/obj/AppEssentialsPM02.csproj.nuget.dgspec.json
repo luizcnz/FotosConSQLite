@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj": {}
+    "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj": {
+    "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
+        "projectUniqueName": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
         "projectName": "AppEssentialsPM02",
-        "projectPath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
+        "projectPath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
         "packagesPath": "C:\\Users\\BLK\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\obj\\",
+        "outputPath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"

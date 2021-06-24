@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "z6K4WugPCOqr0JxVOozLpC3F+OXlPzr4U8qFjh6M2Tt2ncoR6s++7IXm+mlzllRVwLwhgCUcistKjzRc1cETHA==",
+  "dgSpecHash": "EnamFWauebhjoF280f8L3trc41E4LcJL0dHCE8nCuJF9HVEGwAUeSsePpigt4z1QOC+jdMkGrwxoLNBz3oQaow==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.Android\\AppEssentialsPM02.Android.csproj",
+  "projectFilePath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02.Android\\AppEssentialsPM02.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BLK\\.nuget\\packages\\plugin.currentactivity\\2.1.0.2\\plugin.currentactivity.2.1.0.2.nupkg.sha512",
     "C:\\Users\\BLK\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",

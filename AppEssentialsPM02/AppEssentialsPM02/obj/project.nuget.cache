@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lzUspl/JVKDJydfZudS71JjQUSY1sY5y+fdKIm5CcWxmNQTz6r+Dsnwhcha8xexZBpDil9EyJod9oCiTTZyMig==",
+  "dgSpecHash": "ytU8+BI8uyaOkRaCBEXkm+/+G4mXCqm+uQyg5b7dNj3z0S6SUVZjb19oYXwMjcSvoE7K+kZ1Pi1TnXNgekoQlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
+  "projectFilePath": "C:\\Users\\BLK\\source\\descargados\\AppEssentialsPM02 - Carlos\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BLK\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Users\\BLK\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
