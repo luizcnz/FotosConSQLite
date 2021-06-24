@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEssentialsPM02.ListaFotos">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageFileToImageSourceConverter x:Key="ImageFileToImageSourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <ListView x:Name="ListaFotosBD"  RowHeight="350" BackgroundColor="#000000" SeparatorColor="#8D66F3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Background="#1b1b1b" Padding="20,10,20,10">
+
+                                <Label Grid.Row="1"
+                                       TextColor="Aqua" Text="{Binding id}" IsVisible="true" />
+
+                                <Label Grid.Row="2"
+                                       TextColor="Aqua" Text="{Binding ImageRoute, Converter={StaticResource ImageFileToImageSourceConverter}}" IsVisible="true" />
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
