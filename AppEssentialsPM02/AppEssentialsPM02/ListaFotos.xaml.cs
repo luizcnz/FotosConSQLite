@@ -16,6 +16,9 @@ namespace AppEssentialsPM02
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListaFotos : ContentPage
     {
+        private int ItemID;
+        private string ItemRoute;
+
         public class ImageFileToImageSourceConverter : IValueConverter
         {
             public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -60,8 +63,52 @@ namespace AppEssentialsPM02
 
         }
 
-        private void ListaFotosBD_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListaFotosBD_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            var almacenar = e.SelectedItem as pictures;
+
+            ItemID = almacenar.id;
+            ItemRoute = almacenar.ImageRoute;
+
+            seleccion.Text = Convert.ToString(ItemID);
+
+            bool answer = await DisplayAlert("Mensaje", "Desea Visualizar esta imagen", "Si", "No");
+            
+            if(answer == true)
+            {
+                var Datos_VerFoto = new ParaVerFoto
+                {
+                    id_ver = ItemID,
+                    ImageRoute_ver = ItemRoute
+                };
+
+                var inf = new VerImagen(); inf.BindingContext = Datos_VerFoto; await Navigation.PushAsync(inf);
+            }
+            
+
+
+        }
+
+        private void btnborrar_Clicked(object sender, EventArgs e)
+        {
+            string x = Convert.ToString(ItemID);
+
+            SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB);
+            var borrarpersonas = conexion.Query<pictures>($"Delete FROM pictures WHERE id = '" + x + "' ");
+            conexion.Close();
+
+            if (ItemID != 0)
+            {
+                DisplayAlert("Aviso", "Se ha sido eliminado la foto numero " + ItemID + " de la lista de fotos", "Ok");
+
+                OnAppearing();
+            }
+            else
+            {
+                DisplayAlert("Aviso", "No ha seleccionado ningun elemento para borrar!", "Ok");
+            }
+
+
 
         }
     }

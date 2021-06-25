@@ -41,12 +41,11 @@
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,0,10,10">
                         <Label TextColor="#AEA3FA" Text="Ha seleccionado la foto num.: " FontSize="20"/>
-                        <Label TextColor="#AEA3FA" x:Name="selleccion" FontSize="20" />
+                        <Label TextColor="#AEA3FA" x:Name="seleccion" FontSize="20" />
                     </StackLayout>
 
                     <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        <Button x:Name="btnmod" Text="Modificar Datos" 
-                                                    BackgroundColor="#af95cf" Margin="10,0,10,0" FontSize="15" Clicked="btnmod_Clicked" FontAttributes="Bold" TextColor="#351B58"/>
+                        
 
                         <Button x:Name="btnborrar" Text="Borrar Datos" 
                                                 BackgroundColor="#af95cf" Margin="10,0,10,0" FontSize="15" Clicked="btnborrar_Clicked" FontAttributes="Bold" TextColor="#351B58"/>
