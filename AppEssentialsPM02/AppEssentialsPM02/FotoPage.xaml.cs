@@ -66,12 +66,12 @@ namespace AppEssentialsPM02
 
 
 
-            /*var compartirFoto = tomarfoto.Path;
+            var compartirFoto = tomarfoto.Path;
             await Share.RequestAsync(new ShareFileRequest
             {
                 Title = "Foto",
                 File = new ShareFile(compartirFoto)
-            });*/
+            });
         }
 
         private async void Ver_Lista_Clicked(object sender, EventArgs e)
