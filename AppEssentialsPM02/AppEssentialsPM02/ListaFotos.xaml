@@ -23,9 +23,14 @@
                                     <Label 
                                            TextColor="Aqua" Text="{Binding ImageRoute}" IsVisible="false" />
 
-                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="40,0,0,0" BorderColor="#748FAD">
+                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="0,0,0,0" BorderColor="#748FAD">
                                         <Image x:Name="fotodb" Source="{Binding ImageRoute}" HorizontalOptions="End" Margin="0"/>
                                     </Frame>
+
+                                    <StackLayout>
+                                        <Label TextColor="Aqua" Text="{Binding Name}" IsVisible="true" />
+                                        <Label TextColor="Aqua" Text="{Binding Desc}" IsVisible="true" />
+                                    </StackLayout>
 
 
                                 </StackLayout>

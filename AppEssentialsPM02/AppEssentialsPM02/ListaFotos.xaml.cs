@@ -18,6 +18,8 @@ namespace AppEssentialsPM02
     {
         private int ItemID;
         private string ItemRoute;
+        private string ItemName;
+        private string ItemDesc;
 
         public class ImageFileToImageSourceConverter : IValueConverter
         {
@@ -69,6 +71,8 @@ namespace AppEssentialsPM02
 
             ItemID = almacenar.id;
             ItemRoute = almacenar.ImageRoute;
+            ItemName = almacenar.Name;
+            ItemDesc = almacenar.Desc;
 
             seleccion.Text = Convert.ToString(ItemID);
 

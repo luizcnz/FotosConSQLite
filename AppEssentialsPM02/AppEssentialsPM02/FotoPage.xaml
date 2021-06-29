@@ -5,6 +5,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Image x:Name="foto"/>
+            <Entry x:Name="foto_nombre" Placeholder="Nombre" />
+            <Entry x:Name="foto_desc" Placeholder="Descripcion"/>
             <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto"/>
             <Button x:Name="Ver_Lista" Clicked="Ver_Lista_Clicked" Text="Ver Lista De Fotos"/>
         </StackLayout>

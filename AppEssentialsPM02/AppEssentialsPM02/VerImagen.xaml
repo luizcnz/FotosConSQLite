@@ -4,7 +4,14 @@
              x:Class="AppEssentialsPM02.VerImagen">
     <ContentPage.Content>
         <StackLayout>
+            <!--Texto del nombre-->
+            <Label Text="{Binding Name_ver}"/>
+
+            <!--Foto-->
             <Image x:Name="fotodb" Source="{Binding ImageRoute_ver}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0"/>
+
+            <!--Texto de la descripcion-->
+            <Label Text="{Binding Desc_ver}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
