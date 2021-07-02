@@ -7,31 +7,32 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <ListView x:Name="ListaFotosBD" ItemSelected="ListaFotosBD_ItemSelected" RowHeight="350" BackgroundColor="#000000" SeparatorColor="#8D66F3">
+            <ListView x:Name="ListaFotosBD" ItemSelected="ListaFotosBD_ItemSelected" RowHeight="500" BackgroundColor="#000000" SeparatorColor="#8D66F3">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid Background="#1b1b1b" Padding="20,10,20,10">
+                            <Grid Background="#1b1b1b" Padding="10,10,20,10">
 
-                                <StackLayout Orientation="Horizontal">
-                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill">
+                                <StackLayout>
+                                    
+                                    <Label TextColor="Aqua" Text="{Binding Name}" IsVisible="true" HorizontalTextAlignment="Center" Padding="0,0,0,10" FontSize="20" />
+                                    
+                                    <StackLayout Orientation="Horizontal">
+                                        <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="10,10,10,250" Padding="20" BorderColor="#5AC0E3" HorizontalOptions="FillAndExpand">
+                                            <Label 
+                                               TextColor="Aqua" Text="{Binding id}" IsVisible="true" FontSize="30" VerticalOptions="Center" Padding="0" Margin="-10,0" HorizontalTextAlignment="Center" />
+                                        </Frame>
+
+
                                         <Label 
-                                           TextColor="Aqua" Text="{Binding id}" IsVisible="true" FontSize="50" VerticalOptions="Center" Padding="0" />
-                                    </Frame>
+                                               TextColor="Aqua" Text="{Binding ImageRoute}" IsVisible="false" />
 
+                                        <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="0" BorderColor="#748FAD" HorizontalOptions="EndAndExpand" Padding="10">
+                                            <Image x:Name="fotodb" Source="{Binding ImageRoute}" HorizontalOptions="EndAndExpand" Margin="-10"/>
+                                        </Frame>
 
-                                    <Label 
-                                           TextColor="Aqua" Text="{Binding ImageRoute}" IsVisible="false" />
-
-                                    <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="0,0,0,0" BorderColor="#748FAD">
-                                        <Image x:Name="fotodb" Source="{Binding ImageRoute}" HorizontalOptions="End" Margin="0"/>
-                                    </Frame>
-
-                                    <StackLayout>
-                                        <Label TextColor="Aqua" Text="{Binding Name}" IsVisible="true" />
-                                        <Label TextColor="Aqua" Text="{Binding Desc}" IsVisible="true" />
                                     </StackLayout>
-
+                                    <Label TextColor="Aqua" Text="{Binding Desc}" IsVisible="true" HorizontalTextAlignment="Center" Padding="0,10,0,0" />
 
                                 </StackLayout>
 

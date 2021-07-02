@@ -83,7 +83,9 @@ namespace AppEssentialsPM02
                 var Datos_VerFoto = new ParaVerFoto
                 {
                     id_ver = ItemID,
-                    ImageRoute_ver = ItemRoute
+                    ImageRoute_ver = ItemRoute,
+                    Name_ver = ItemName,
+                    Desc_ver = ItemDesc
                 };
 
                 var inf = new VerImagen(); inf.BindingContext = Datos_VerFoto; await Navigation.PushAsync(inf);

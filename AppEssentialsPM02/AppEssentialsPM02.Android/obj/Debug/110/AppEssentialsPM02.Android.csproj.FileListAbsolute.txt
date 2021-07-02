@@ -1350,3 +1350,4 @@ C:\Users\BLK\source\descargados\AppEssentialsPM02 - Carlos\AppEssentialsPM02\App
 C:\Users\BLK\source\descargados\AppEssentialsPM02 - Carlos\AppEssentialsPM02\AppEssentialsPM02.Android\obj\Debug\110\stamp\_GenerateJavaStubs.stamp
 C:\Users\BLK\source\descargados\AppEssentialsPM02 - Carlos\AppEssentialsPM02\AppEssentialsPM02.Android\obj\Debug\110\stamp\_GeneratePackageManagerJava.stamp
 C:\Users\BLK\source\descargados\AppEssentialsPM02 - Carlos\AppEssentialsPM02\AppEssentialsPM02.Android\obj\Debug\110\stamp\_ResolveLibraryProjectImports.stamp
+C:\Users\BLK\source\descargados\AppEssentialsPM02 - Carlos\AppEssentialsPM02\AppEssentialsPM02.Android\obj\Debug\110\res\drawable\imagen.png

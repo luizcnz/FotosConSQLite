@@ -4,7 +4,7 @@
              x:Class="AppEssentialsPM02.FotoPage">
     <ContentPage.Content>
         <StackLayout>
-            <Image x:Name="foto"/>
+            <Image x:Name="foto" Source="imagen.png"/>
             <Entry x:Name="foto_nombre" Placeholder="Nombre" />
             <Entry x:Name="foto_desc" Placeholder="Descripcion"/>
             <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto"/>

@@ -14,7 +14,7 @@ namespace AppEssentialsPM02
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new FotoPage());
         }
         public static BaseDatos InstanciaBD
         {
@@ -32,7 +32,7 @@ namespace AppEssentialsPM02
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new FotoPage());
 
             UbicacionDB = DBlocal;
         }
