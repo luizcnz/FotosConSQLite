@@ -67,7 +67,7 @@ namespace AppEssentialsPM02
             {
                 Picture photoToSave = new Picture {
                     Name = foto_nombre.Text,
-                    Desc = foto_nombre.Text,
+                    Desc = foto_desc.Text,
                     Imagen = arrayImagen
                      }; 
 

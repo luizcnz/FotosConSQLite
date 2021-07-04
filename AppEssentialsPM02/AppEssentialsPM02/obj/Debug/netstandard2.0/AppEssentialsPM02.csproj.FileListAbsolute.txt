@@ -54,3 +54,22 @@ C:\Users\Dani Hernandez\Source\Repos\FotosConSQLite\AppEssentialsPM02\AppEssenti
 C:\Users\Dani Hernandez\Source\Repos\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\ref\AppEssentialsPM02.dll
 C:\Users\Dani Hernandez\Source\Repos\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.pdb
 C:\Users\Dani Hernandez\Source\Repos\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.csproj.AssemblyReference.cache
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\bin\Debug\netstandard2.0\AppEssentialsPM02.deps.json
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\bin\Debug\netstandard2.0\AppEssentialsPM02.dll
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\bin\Debug\netstandard2.0\ref\AppEssentialsPM02.dll
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\bin\Debug\netstandard2.0\AppEssentialsPM02.pdb
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\FotoPage.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\ListaFotos.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\MapPage.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\SpeechPage.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\VerImagen.xaml.g.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.AssemblyInfoInputs.cache
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.AssemblyInfo.cs
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.csproj.CoreCompileInputs.cache
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.dll
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\ref\AppEssentialsPM02.dll
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.pdb
+C:\Users\BLK\source\aparte\FotosConSQLite\AppEssentialsPM02\AppEssentialsPM02\obj\Debug\netstandard2.0\AppEssentialsPM02.csproj.AssemblyReference.cache

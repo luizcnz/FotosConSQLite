@@ -9,15 +9,33 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10" >
             <!--Texto del nombre-->
-            <Label Text="{Binding Name}"/>
 
-            <!--Foto-->
-            <Image x:Name="fotodb" Source="{Binding Imagen, Converter={StaticResource ByteArrayToImage}}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Margin="0"/>
+            <Label  Text="{Binding Name}"
+                    Margin="15,10,15,0" 
+                    TextColor="Black"
+                    FontSize="20" 
+                    FontFamily="NewYork"/>
 
             <!--Texto de la descripcion-->
-            <Label Text="{Binding Desc_ver}"/>
+            <Label  Text="{Binding Desc}"
+                    Margin="30,0,20,0" 
+                    TextColor="Black"
+                    FontSize="20" 
+                    FontFamily="NewYork"/>
+
+            
+
+            <!--Foto-->
+            <Image x:Name="fotodb" 
+                   Source="{Binding Imagen, Converter={StaticResource ByteArrayToImage}}" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions="FillAndExpand" 
+                   Margin="15,-50,15,0"/>
+
+            
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

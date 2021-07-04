@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Fonts\AppleGaramond-Bold.ttf" />
+    <None Remove="Resources\Fonts\AppleGaramond-Light.ttf" />
+    <None Remove="Resources\Fonts\Net-NewYork.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\AppleGaramond-Bold.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\AppleGaramond-Light.ttf" />
+    <EmbeddedResource Include="Resources\Fonts\Net-NewYork.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="sqlite-net-pcl" Version="1.7.335" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />

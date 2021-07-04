@@ -1007,23 +1007,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dani Hernandez\\.nuget\\packages\\": {},
+    "C:\\Users\\BLK\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dani Hernandez\\Source\\Repos\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
+      "projectUniqueName": "C:\\Users\\BLK\\source\\aparte\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
       "projectName": "AppEssentialsPM02",
-      "projectPath": "C:\\Users\\Dani Hernandez\\Source\\Repos\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
-      "packagesPath": "C:\\Users\\Dani Hernandez\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dani Hernandez\\Source\\Repos\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\obj\\",
+      "projectPath": "C:\\Users\\BLK\\source\\aparte\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\AppEssentialsPM02.csproj",
+      "packagesPath": "C:\\Users\\BLK\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\BLK\\source\\aparte\\FotosConSQLite\\AppEssentialsPM02\\AppEssentialsPM02\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Dani Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\BLK\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

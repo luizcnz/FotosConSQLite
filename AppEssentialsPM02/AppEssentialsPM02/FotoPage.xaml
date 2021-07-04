@@ -7,15 +7,63 @@
         <ScrollView>
             <StackLayout>
                 <Image x:Name="foto" Source="imagen.png" WidthRequest="200"/>
-                <Entry x:Name="foto_nombre" Placeholder="Nombre" />
-                <Entry x:Name="foto_desc" Placeholder="Descripcion"/>
-                <StackLayout Orientation="Horizontal">
-                    <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto" HorizontalOptions="FillAndExpand"/>
-                    <Button x:Name="BtnGuardar" IsVisible="False" Clicked="BtnGuardar_Clicked" Text="Guardar" HorizontalOptions="FillAndExpand"/>
+                
+                <Entry x:Name="foto_nombre" 
+                       BackgroundColor="#FDFDFD"
+                       Placeholder="Nombre"
+                       Margin="20,10,20,0" 
+                       TextColor="Black"
+                       FontSize="20" 
+                       FontFamily="NewYork"/>
+
+                <Entry x:Name="foto_desc"
+                       BackgroundColor="#FDFDFD"
+                       Placeholder="Descripcion"
+                       Margin="20,10,20,0" 
+                       TextColor="Black"
+                       FontSize="20" 
+                       FontFamily="NewYork"/>
+
+
+                <StackLayout Padding="0,0" Margin="5">
+
+                    <Grid>
+                        <Button x:Name="toma" 
+                                Grid.Row="0" Grid.Column="0"
+                                Clicked="toma_Clicked" 
+                                Text="Tomar Foto" 
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="20,10,20,0" 
+                               TextColor="Black"
+                               FontSize="20" 
+                               FontFamily="AppleNegrita" HeightRequest="60" WidthRequest="200"/>
+
+                        <Button x:Name="BtnGuardar" 
+                                Grid.Row="1" Grid.Column="0"
+                                IsVisible="false" 
+                                Clicked="BtnGuardar_Clicked" 
+                                Text="Guardar" 
+                                HorizontalOptions="CenterAndExpand"
+                                Margin="20,10,20,0" 
+                               TextColor="Black"
+                               FontSize="20" 
+                               FontFamily="AppleNegrita" HeightRequest="60" WidthRequest="200"/>
+
+                        <Button x:Name="Ver_Lista" 
+                                Grid.Row="2" Grid.Column="0"
+                                Clicked="Ver_Lista_Clicked" 
+                                Text="Ver Lista De Fotos" 
+                                HorizontalOptions="Center" 
+                                MinimumHeightRequest="-1"
+                                Margin="20,10,20,0" 
+                               TextColor="Black"
+                               FontSize="20" 
+                               FontFamily="AppleNegrita" HeightRequest="60" WidthRequest="200"/>
+                    </Grid>
+
+                    
+
                 </StackLayout>
-                
-                <Button x:Name="Ver_Lista" Clicked="Ver_Lista_Clicked" Text="Ver Lista De Fotos"/>
-                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
