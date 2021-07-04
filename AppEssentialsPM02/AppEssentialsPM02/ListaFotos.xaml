@@ -1,66 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?><ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:Converters="clr-namespace:AppEssentialsPM02.Converters"
              x:Class="AppEssentialsPM02.ListaFotos">
-
-
-
-    <ContentPage.Content>
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ByteArrayToImageSourceConverter x:Key="ByteArrayToImage"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
         <StackLayout>
-            <ListView x:Name="ListaFotosBD" ItemSelected="ListaFotosBD_ItemSelected" RowHeight="500" BackgroundColor="#000000" SeparatorColor="#8D66F3">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid Background="#1b1b1b" Padding="10,10,20,10">
-
-                                <StackLayout>
-                                    
-                                    <Label TextColor="Aqua" Text="{Binding Name}" IsVisible="true" HorizontalTextAlignment="Center" Padding="0,0,0,10" FontSize="20" />
-                                    
-                                    <StackLayout Orientation="Horizontal">
-                                        <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="10,10,10,250" Padding="20" BorderColor="#5AC0E3" HorizontalOptions="FillAndExpand">
-                                            <Label 
-                                               TextColor="Aqua" Text="{Binding id}" IsVisible="true" FontSize="30" VerticalOptions="Center" Padding="0" Margin="-10,0" HorizontalTextAlignment="Center" />
-                                        </Frame>
-
-
-                                        <Label 
-                                               TextColor="Aqua" Text="{Binding ImageRoute}" IsVisible="false" />
-
-                                        <Frame BackgroundColor="#3E3161" CornerRadius="10" VerticalOptions="Fill" Margin="0" BorderColor="#748FAD" HorizontalOptions="EndAndExpand" Padding="10">
-                                            <Image x:Name="fotodb" Source="{Binding ImageRoute}" HorizontalOptions="EndAndExpand" Margin="-10"/>
-                                        </Frame>
-
-                                    </StackLayout>
-                                    <Label TextColor="Aqua" Text="{Binding Desc}" IsVisible="true" HorizontalTextAlignment="Center" Padding="0,10,0,0" />
-
-                                </StackLayout>
-
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            <Frame BorderColor="#3E77F3" BackgroundColor="#121212" Margin="-20" CornerRadius="10" >
-                <StackLayout >
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10,0,10,10">
-                        <Label TextColor="#AEA3FA" Text="Ha seleccionado la foto num.: " FontSize="20"/>
-                        <Label TextColor="#AEA3FA" x:Name="seleccion" FontSize="20" />
-                    </StackLayout>
-
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
-                        
-
-                        <Button x:Name="btnborrar" Text="Borrar Datos" 
-                                                BackgroundColor="#af95cf" Margin="10,0,10,0" FontSize="15" Clicked="btnborrar_Clicked" FontAttributes="Bold" TextColor="#351B58"/>
-                    </StackLayout>
-
-                </StackLayout>
-            </Frame>
+        <ListView x:Name="ListaFotosBD"  RowHeight="450" SeparatorColor="#8D66F3"
+                  ItemTapped="ListaFotosBD_ItemTapped"
+                  ItemsSource="{Binding Picture}"
+                  SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Image x:Name="fotodb" Source="{Binding  Imagen, Converter={StaticResource ByteArrayToImage}}" HorizontalOptions="FillAndExpand" />
+                        <ViewCell.ContextActions>
+                            <MenuItem x:Name="MtmEliminarFoto"
+                                          Text="Eliminar"
+                                          Clicked="MtmEliminarFoto_Clicked"
+                                          CommandParameter="{Binding .}"
+                                          Command="{Binding MyComand}"
+                                          IsDestructive="true"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
         </StackLayout>
-    </ContentPage.Content>
+
 </ContentPage>
 

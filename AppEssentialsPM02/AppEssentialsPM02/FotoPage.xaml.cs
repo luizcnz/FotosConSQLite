@@ -10,6 +10,7 @@ using Plugin.Media;
 using Xamarin.Essentials;
 using SQLite;
 using System.IO;
+using Plugin.Media.Abstractions;
 
 namespace AppEssentialsPM02
 {
@@ -18,9 +19,19 @@ namespace AppEssentialsPM02
     {
         //Varibles para capturar el nombre y la descripcion
         public string nombre, descripcion;
+
+        //Variables globales de estado
+        private bool wasPhotoTaked;//sirve para validar si se tomo una foto
+
+        
+        //Se crea de manera global de manera que permite acceder a el despues de haber tomado la foto
+        byte[] arrayImagen = null;
+
+
         public FotoPage()
         {
             InitializeComponent();
+            wasPhotoTaked = false;
         }
 
 
@@ -28,76 +39,62 @@ namespace AppEssentialsPM02
         private async void toma_Clicked(object sender, EventArgs e)
         {
 
-            //captura del nombre y la descripcion
-            nombre = foto_nombre.Text;
-            descripcion = foto_desc.Text;
+     
+                    //var foto = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions());
+                   var fotoTomada = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions());
+         
+                    if (fotoTomada != null)
+                    {
+                        //variable utilizada para almacenar la foto tomada en formado 
+                        arrayImagen = null;
+                        BtnGuardar.IsVisible = true;
+                         MemoryStream memoryStream = new MemoryStream();// creamos un flujo de memoria temporal
+                        
+                            fotoTomada.GetStream().CopyTo(memoryStream); 
+                            arrayImagen = memoryStream.ToArray();
+                           
+                        // se muestra la imagen pero aun no se guarda
+                        this.foto.Source = ImageSource.FromStream(() => { return fotoTomada.GetStream(); });
+                    }
 
 
+        }
+
+        private async void BtnGuardar_Clicked(object sender, EventArgs e)
+        {
             //condicional para asegurarse de que se ingreso un nombre y una descripcion
-            if(nombre != null)
+            if (!string.IsNullOrEmpty(foto_nombre.Text))
             {
-                if (descripcion != null)
+                Picture photoToSave = new Picture {
+                    Name = foto_nombre.Text,
+                    Desc = foto_nombre.Text,
+                    Imagen = arrayImagen
+                     }; 
+
+                try
                 {
-                    //var tomarfoto = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions());
-                    var tomarfoto = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                    int res = await App.InstanciaBD.InsertPicture(photoToSave);
+                    if (res > 0)
                     {
-                        Directory = "MyApp",
-                        Name = nombre
-                    });
+                      await  DisplayAlert("Guardado Exitosamente", "Imagen guardada exitosamente", "Ok");
 
-
-
-                    #region desastres de carlos
-
-
-                    string ruta = Convert.ToString(ImageSource.FromStream(() => { return tomarfoto.GetStream(); }));
-
-                    var lugar = new pictures
-                    {
-                        ImageRoute = tomarfoto.Path,
-                        Name = nombre,
-                        Desc = descripcion
-
-                    };
-
-                    using (SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB))
-                    {
-                        conexion.CreateTable<pictures>();
-                        conexion.Insert(lugar);
-
+                        //Reseteamos a los valores iniciales 
+                        BtnGuardar.IsVisible = false;
+                        photoToSave = null;
+                        foto.Source = ImageSource.FromFile("imagen.png");
+                        foto_desc.Text = "";
+                        foto_nombre.Text = "";
                     }
-
-
-
-                    #endregion
-
-
-                    await DisplayAlert("Ubicacion Archivo", tomarfoto.Path, "Ok");
-
-                    if (tomarfoto != null)
-                    {
-                        foto.Source = ImageSource.FromStream(() => { return tomarfoto.GetStream(); });
-                    }
-
-
-
-                    var compartirFoto = tomarfoto.Path;
-                    await Share.RequestAsync(new ShareFileRequest
-                    {
-                        Title = "Foto",
-                        File = new ShareFile(compartirFoto)
-                    });
                 }
-                else
+                catch(Exception ex)
                 {
-                    DisplayAlert("Alerta", "Debe ingresar una descripcion a la foto", "ok");
+                    await DisplayAlert("Error", "Lo sentimos ocurrio un error"+ex.Message, "Ok");
                 }
+              
+                
             }
-            else 
-            {
-                DisplayAlert("Alerta", "Debe ingresar un nombre para la foto", "ok");
-            }
-            
+            else
+                await DisplayAlert("Campos vacios", "Debe asignar al menos un nombre a la foto", "Ok");
         }
 
         private async void Ver_Lista_Clicked(object sender, EventArgs e)

@@ -2,13 +2,21 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEssentialsPM02.FotoPage">
+
     <ContentPage.Content>
-        <StackLayout>
-            <Image x:Name="foto" Source="imagen.png"/>
-            <Entry x:Name="foto_nombre" Placeholder="Nombre" />
-            <Entry x:Name="foto_desc" Placeholder="Descripcion"/>
-            <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto"/>
-            <Button x:Name="Ver_Lista" Clicked="Ver_Lista_Clicked" Text="Ver Lista De Fotos"/>
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Image x:Name="foto" Source="imagen.png" WidthRequest="200"/>
+                <Entry x:Name="foto_nombre" Placeholder="Nombre" />
+                <Entry x:Name="foto_desc" Placeholder="Descripcion"/>
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="toma" Clicked="toma_Clicked" Text="Tomar Foto" HorizontalOptions="FillAndExpand"/>
+                    <Button x:Name="BtnGuardar" IsVisible="False" Clicked="BtnGuardar_Clicked" Text="Guardar" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
+                
+                <Button x:Name="Ver_Lista" Clicked="Ver_Lista_Clicked" Text="Ver Lista De Fotos"/>
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
