@@ -10,6 +10,8 @@ using SQLite;
 using AppEssentialsPM02;
 using System.Globalization;
 using Plugin.Media.Abstractions;
+using System.Collections.ObjectModel;
+using System.IO;
 
 namespace AppEssentialsPM02
 {
@@ -21,19 +23,6 @@ namespace AppEssentialsPM02
         private string ItemName;
         private string ItemDesc;
 
-        public class ImageFileToImageSourceConverter : IValueConverter
-        {
-            public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-            {
-                var path = (string)value;
-                return ImageSource.FromFile(path);
-            }
-
-            public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-            {
-                throw new NotImplementedException();
-            }
-        }
 
 
 
@@ -46,28 +35,27 @@ namespace AppEssentialsPM02
         {
             base.OnAppearing();
 
-            SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB);
-            conexion.CreateTable<pictures>();
-            var listafotos = conexion.Table<pictures>().ToList();
-            ListaFotosBD.ItemsSource = listafotos;
-            conexion.Close();
+
+            var listafotos = await App.InstanciaBD.ObtenerSitios();
+            //Creamos un colleccion observable para que los cambios que se realizan en el modelo se reflejen de maner automatica
+            //en la vista
+            ObservableCollection<Picture> observableCollectionFotos = new ObservableCollection<Picture>();
+            ListaFotosBD.ItemsSource = observableCollectionFotos;
+            foreach(Picture imagen in listafotos)
+            {
+                observableCollectionFotos.Add(imagen);      
+            }
 
 
 
-            //new MediaFile(file.Path, () => file.OpenStreamForReadAsync().Result, albumPath: null);
-
-            //pictures pic = new pictures();
-
-            /*carga.Text = pic.ImageRoute;*/
-
-            //fotodb.Source = pic.ImageRoute;
 
 
         }
 
         private async void ListaFotosBD_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var almacenar = e.SelectedItem as pictures;
+            /*
+            var almacenar = e.SelectedItem as Picture;
 
             ItemID = almacenar.id;
             ItemRoute = almacenar.ImageRoute;
@@ -90,32 +78,34 @@ namespace AppEssentialsPM02
 
                 var inf = new VerImagen(); inf.BindingContext = Datos_VerFoto; await Navigation.PushAsync(inf);
             }
-            
+           */ 
 
 
+        }
+
+        private async void MtmEliminarFoto_Clicked(object sender, EventArgs e)
+        {
+            var menuItem = sender as MenuItem;
+            var PictureSelected = menuItem.CommandParameter as Picture;
+            //Se pregunta al usuario si desea elminar la ubicación
+            bool confirmacion = await DisplayAlert("¿Desea borrar la ubicación?", "Los datos de borrarán de forma permanente", "Aceptar", "Cancelar ");
+            if (confirmacion)
+            {
+                await App.InstanciaBD.EliminarFoto(PictureSelected);
+            }
         }
 
         private void btnborrar_Clicked(object sender, EventArgs e)
         {
-            string x = Convert.ToString(ItemID);
-
-            SQLiteConnection conexion = new SQLiteConnection(App.UbicacionDB);
-            var borrarpersonas = conexion.Query<pictures>($"Delete FROM pictures WHERE id = '" + x + "' ");
-            conexion.Close();
-
-            if (ItemID != 0)
-            {
-                DisplayAlert("Aviso", "Se ha sido eliminado la foto numero " + ItemID + " de la lista de fotos", "Ok");
-
-                OnAppearing();
-            }
-            else
-            {
-                DisplayAlert("Aviso", "No ha seleccionado ningun elemento para borrar!", "Ok");
-            }
-
-
 
         }
+
+        private async void ListaFotosBD_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var PictureSelected = e.Item as Picture;
+            var verImagen = new VerImagen(); 
+              verImagen.BindingContext = PictureSelected; 
+             await Navigation.PushAsync(verImagen);
+         }
     }
 }
